@@ -9,8 +9,8 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Company extends TaxPayer{
-	
+public class Company extends TaxPayer {
+
 	private int numberOfEmployees;
 
 	public Company(String name, Double anualIncome, int numberOfEmployees) {
@@ -20,10 +20,14 @@ public class Company extends TaxPayer{
 
 	@Override
 	public double payTaxes() {
-		return (Double) null;
+		double payTaxes;
+		if (getNumberOfEmployees() > 10) {
+			payTaxes = getAnualIncome() * 0.14;
+		} else {
+			payTaxes = getAnualIncome() * 0.16;
+		}
+//		System.out.println("Paytaxes-> "+ String.format("%.2f", payTaxes));
+		return payTaxes;
 	}
-	
-	
-	
 
 }

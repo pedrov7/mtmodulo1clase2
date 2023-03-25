@@ -24,25 +24,23 @@ public class Individual extends TaxPayer {
 		if (getAnualIncome() > 0 && getAnualIncome() < 20000.00) {
 			if (getHealthExpenditures() > 0) {
 				pay = (getAnualIncome() * 0.15) - (getHealthExpenditures() * 0.5);
-				System.out.println("payTaex " + String.format("%.2f", pay).toString());
-				return pay;
+//				System.out.println("payTaxes1 " + String.format("%.2f", pay).toString());
 			} else {
 				pay = getAnualIncome() * 0.15;
-				System.out.println("payTaex " + String.format("%.2f", pay));
-				return pay;
+//				System.out.println("payTaxes2-> " + String.format("%.2f", pay));
 			}
 
 		} else {
 			if (getHealthExpenditures() > 0) {
 				pay = (getAnualIncome() * 0.25) - (getHealthExpenditures() * 0.5);
-				System.out.println("payTaex " + pay);
-				return pay;
+//				System.out.println("payTaxes3 -> " + pay);
 			} else {
 				pay = getAnualIncome() * 0.25;
-				System.out.println("payTaex " + pay);
-				return pay;
+//				System.out.println("payTaex4 -> " + pay);
 			}
+
 		}
+		return pay;
 	}
 
 }
